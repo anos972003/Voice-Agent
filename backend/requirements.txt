@@ -1,0 +1,8 @@
+livekit-agents
+livekit-plugins-google
+livekit-plugins-groq
+livekit-plugins-silero
+python-dotenv
+faiss-cpu
+sentence-transformers
+numpy

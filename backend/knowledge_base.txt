@@ -1,0 +1,19 @@
+### DRONE HARDWARE & ANATOMY ###
+1. Electronic Speed Controller (ESC): The ESC is a critical component that regulates the power sent from the battery to the brushless motors. It converts DC power from the LiPo battery into 3-phase AC power to drive the motors. It interprets PWM (Pulse Width Modulation) or digital protocols (like DShot) from the Flight Controller to adjust motor speed thousands of times per second.
+2. Flight Controller (FC): The "brain" of the drone. It contains the IMU (Inertial Measurement Unit), processor (STM32 F4/F7/H7), and input/output ports. It runs firmware like Betaflight, ArduPilot, or PX4 to execute PID loop calculations, keeping the drone stable by adjusting motor output based on sensor data.
+3. Brushless Motors: Drones typically use BLDC (Brushless Direct Current) motors due to their high efficiency and longevity. They are rated in KV (RPM per Volt). Lower KV motors (e.g., 300-900KV) produce high torque for large propellers and heavy lifts, while high KV motors (e.g., 1700-2700KV) are used for racing and small, fast drones.
+4. LiPo Batteries: Lithium Polymer batteries are the standard power source, offering high discharge rates (C-rating). A "4S" battery has 4 cells in series (14.8V nominal), while a "6S" has 6 cells (22.2V nominal). High C-ratings (e.g., 100C) are required for racing drones to deliver massive current bursts without voltage sag.
+
+### FLIGHT PHYSICS ###
+5. Yaw Control: On a quadcopter, yaw (spinning left/right) is achieved by torque imbalance. Two diagonal motors spin clockwise (CW) and the other two spin counter-clockwise (CCW). To yaw left, the FC speeds up the CW motors and slows down the CCW motors, preserving total lift while creating a net torque that rotates the frame.
+6. Pitch and Roll: To pitch forward, the rear motors spin faster than the front motors, creating more lift at the back. To roll right, the left motors spin faster than the right motors. The FC manages these differential thrusts automatically.
+
+### SENSORS & NAVIGATION ###
+7. IMU (Gyro & Accelerometer): The Gyroscope measures angular velocity (degrees per second) to detect rotation. The Accelerometer measures linear acceleration and gravity vector to determine if the drone is level.
+8. GPS/GNSS: Modules like the u-blox M8N or M10 provide positioning data. This enables autonomous modes like Return-to-Home (RTH), Loiter (Position Hold), and Waypoint missions. A compass (magnetometer) is required for GPS modes to know the drone's heading relative to North.
+9. Optical Flow & LiDAR: Used for indoor stability where GPS is unavailable. Optical flow sensors track ground texture movement to hold position, while LiDAR measures precise altitude above ground level (AGL).
+
+### REGULATIONS (USA/FAA PART 107 & RECREATIONAL) ###
+10. Registration: All drones over 0.55 lbs (250g) must be registered with the FAA. Remote ID is now required for most drones, broadcasting telemetry data to local receivers.
+11. VLOS: Visual Line of Sight must be maintained at all times. First Person View (FPV) pilots require a visual observer standing next to them.
+12. Altitude Limit: Drones are generally limited to 400 feet (120 meters) above ground level (AGL) to avoid conflict with manned aircraft.

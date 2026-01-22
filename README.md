@@ -1,4 +1,6 @@
 # Voice Agent - LiveKit + RAG
+![Demo Screenshot](pictures/demo1.jpeg)
+![Demo Screenshot](pictures/demo2.jpeg)
 
 A real-time voice-enabled AI agent powered by LiveKit Agents with RAG (Retrieval-Augmented Generation) for context-aware responses about drone operations.
 
